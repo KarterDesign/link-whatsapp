@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Links de WhatsApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gerador de Links de WhatsApp</h1>
+            <p>Crie links personalizados para conversas no WhatsApp</p>
+        </header>
+
+        <main class="content">
+            <div class="form-container">
+                <form id="whatsapp-form">
+                    <div class="form-group">
+                        <label for="phone">Número do WhatsApp</label>
+                        <div class="input-group">
+                            <span class="input-group-prefix">+55</span>
+                            <input type="tel" id="phone" name="phone" placeholder="DDD + Número" required>
+                        </div>
+                        <small>Ex: 11999999999 (apenas números)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensagem (opcional)</label>
+                        <textarea id="message" name="message" placeholder="Digite uma mensagem predefinida"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn-generate">Gerar Link</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="result-container" id="result-container" style="display: none;">
+                <h2>Seu Link Está Pronto!</h2>
+                <div class="link-preview" id="link-preview"></div>
+                <div class="action-buttons">
+                    <button id="copy-link" class="btn-action">
+                        <i class="fas fa-copy"></i> Copiar Link
+                    </button>
+                    <a id="test-link" href="#" target="_blank" class="btn-action">
+                        <i class="fab fa-whatsapp"></i> Testar Link
+                    </a>
+                </div>
+                <div class="qr-code-container">
+                    <h3>QR Code</h3>
+                    <div id="qrcode"></div>
+                    <button id="download-qr" class="btn-action">
+                        <i class="fas fa-download"></i> Baixar QR Code
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Criado com <i class="fas fa-heart"></i> | 2023</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode.js/lib/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
